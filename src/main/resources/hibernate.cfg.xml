@@ -36,9 +36,10 @@
         <mapping resource="com.self.learning/manyToOneBoth/Customers.hbm.xml"/>
         <mapping class="com.self.learning.manyToOneBoth.Orders"/>
         <mapping resource="com.self.learning/manyToOneBoth/Orders.hbm.xml"/>
-        <mapping resource="com.self.learning/oneToOne.foreign/Deptment.hbm.xml"/>
-        <mapping resource="com.self.learning/oneToOne.foreign/Manager.hbm.xml"/>
-
+        <!--<mapping resource="com.self.learning/oneToOne.foreign/Deptment.hbm.xml"/>-->
+        <!--<mapping resource="com.self.learning/oneToOne.foreign/Manager.hbm.xml"/>-->
+        <mapping resource="com.self.learning/oneToOne.primary/Deptment.hbm.xml"/>
+        <mapping resource="com.self.learning/oneToOne.primary/Manager.hbm.xml"/>
 
         <!--<mapping class="com.self.learning.entity.News"/>-->
         <!--<mapping resource="com.self.learning/entity/News.hbm.xml"/>-->

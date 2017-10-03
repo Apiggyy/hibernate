@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.self.learning.oneToOne.primay.Deptment" table="deptments" schema="hibernate">
+        <id name="deptId" column="dept_id">
+            <generator class="foreign">
+                <param name="property">manager</param>
+            </generator>
+        </id>
+        <property name="deptName" column="dept_name"/>
+        <one-to-one name="manager" class="com.self.learning.oneToOne.primay.Manager" constrained="true"/>
+    </class>
+</hibernate-mapping>

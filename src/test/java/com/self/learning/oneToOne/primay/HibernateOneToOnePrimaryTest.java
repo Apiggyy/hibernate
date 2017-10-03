@@ -1,4 +1,4 @@
-package com.self.learning.oneToOne.foreign;
+package com.self.learning.oneToOne.primay;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 @SuppressWarnings("Duplicates")
-public class HibernateOneToOneTest {
+public class HibernateOneToOnePrimaryTest {
 
     private SessionFactory sessionFactory;
     private Session session;
