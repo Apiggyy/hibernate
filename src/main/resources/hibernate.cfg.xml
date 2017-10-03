@@ -40,7 +40,10 @@
         <!--<mapping resource="com.self.learning/oneToOne.foreign/Manager.hbm.xml"/>-->
         <mapping resource="com.self.learning/oneToOne.primary/Deptment.hbm.xml"/>
         <mapping resource="com.self.learning/oneToOne.primary/Manager.hbm.xml"/>
-
+        <mapping resource="com.self.learning/manyToMany/Categorys.hbm.xml"/>
+        <mapping resource="com.self.learning/manyToMany/Items.hbm.xml"/>
+        <!--<mapping resource="com.self.learning/manyToMany/Category.hbm.xml"/>-->
+        <!--<mapping resource="com.self.learning/manyToMany/Item.hbm.xml"/>-->
         <!--<mapping class="com.self.learning.entity.News"/>-->
         <!--<mapping resource="com.self.learning/entity/News.hbm.xml"/>-->
         <!--<mapping class="com.self.learning.entity.Worker"/>-->

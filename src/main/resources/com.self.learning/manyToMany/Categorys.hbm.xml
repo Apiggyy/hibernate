@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.self.learning.manyToMany.Categorys" table="categorys" schema="hibernate">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name"/>
+        <set name="items" table="category_item_map" schema="hibernate" catalog="">
+            <key>
+                <column name="category_id"/>
+            </key>
+            <many-to-many not-found="ignore" class="com.self.learning.manyToMany.Items">
+                <column name="item_id"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
