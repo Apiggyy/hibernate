@@ -32,19 +32,18 @@
         <property name="hibernate.jdbc.batch_size">30</property>
 
         <!--ORM映射关系-->
-        <mapping class="com.self.learning.manyToOneBoth.Customers"/>
-        <mapping resource="com.self.learning/manyToOneBoth/Customers.hbm.xml"/>
-        <mapping class="com.self.learning.manyToOneBoth.Orders"/>
-        <mapping resource="com.self.learning/manyToOneBoth/Orders.hbm.xml"/>
+        <!--<mapping class="com.self.learning.manyToOneBoth.Customers"/>-->
+        <!--<mapping resource="com.self.learning/manyToOneBoth/Customers.hbm.xml"/>-->
+        <!--<mapping class="com.self.learning.manyToOneBoth.Orders"/>-->
+        <!--<mapping resource="com.self.learning/manyToOneBoth/Orders.hbm.xml"/>-->
         <!--<mapping resource="com.self.learning/oneToOne.foreign/Deptment.hbm.xml"/>-->
         <!--<mapping resource="com.self.learning/oneToOne.foreign/Manager.hbm.xml"/>-->
-        <mapping resource="com.self.learning/oneToOne.primary/Deptment.hbm.xml"/>
-        <mapping resource="com.self.learning/oneToOne.primary/Manager.hbm.xml"/>
-        <mapping resource="com.self.learning/manyToMany/Categorys.hbm.xml"/>
-        <mapping resource="com.self.learning/manyToMany/Items.hbm.xml"/>
+        <!--<mapping resource="com.self.learning/oneToOne.primary/Deptment.hbm.xml"/>-->
+        <!--<mapping resource="com.self.learning/oneToOne.primary/Manager.hbm.xml"/>-->
+        <!--<mapping resource="com.self.learning/manyToMany/Categorys.hbm.xml"/>-->
+        <!--<mapping resource="com.self.learning/manyToMany/Items.hbm.xml"/>-->
         <!--<mapping resource="com.self.learning/subclass/Person.hbm.xml"/>-->
-        <mapping resource="com.self.learning/joined.subclass/Person.hbm.xml"/>
-
+        <!--<mapping resource="com.self.learning/joined.subclass/Person.hbm.xml"/>-->
         <!--<mapping resource="com.self.learning/manyToMany/Category.hbm.xml"/>-->
         <!--<mapping resource="com.self.learning/manyToMany/Item.hbm.xml"/>-->
         <!--<mapping class="com.self.learning.entity.News"/>-->
@@ -55,5 +54,9 @@
         <!--<mapping resource="com.self.learning/manyToOne/Customers.hbm.xml"/>-->
         <!--<mapping class="com.self.learning.mayToOne.Orders"/>-->
         <!--<mapping resource="com.self.learning/manyToOne/Orders.hbm.xml"/>-->
+
+        <mapping resource="com.self.learning/strategy/Customers.hbm.xml"/>
+        <mapping resource="com.self.learning/strategy/Orders.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>
