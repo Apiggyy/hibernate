@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-10-4 15:35:54 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.self.learning.entity.Employee" table="T_EMPLOYEE">
+    <class name="com.self.learning.hql.Employee" table="T_EMPLOYEE">
         <id name="id" type="int">
             <column name="ID" />
             <generator class="native" />
@@ -17,8 +17,10 @@
         <property name="email" type="java.lang.String">
             <column name="EMAIL" />
         </property>
-        <many-to-one name="dept" class="com.self.learning.entity.Department" fetch="join">
+        <many-to-one name="dept" class="com.self.learning.hql.Department" fetch="join">
             <column name="DEPT_ID"/>
         </many-to-one>
     </class>
+    
+    <query name="salaryEmps"><![CDATA[from Employee e where e.salary>:minSal and e.salary<:maxSal]]></query>
 </hibernate-mapping>

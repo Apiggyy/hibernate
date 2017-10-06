@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-10-4 15:35:54 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.self.learning.entity.Department" table="T_DEPARTMENT">
+    <class name="com.self.learning.hql.Department" table="T_DEPARTMENT">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
             <generator class="native" />
@@ -15,7 +15,7 @@
             <key>
                 <column name="DEPT_ID" />
             </key>
-            <one-to-many class="com.self.learning.entity.Employee" />
+            <one-to-many class="com.self.learning.hql.Employee" />
         </set>
     </class>
 </hibernate-mapping>

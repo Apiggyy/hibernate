@@ -1,17 +1,26 @@
-package com.self.learning.entity;
+package com.self.learning.hql;
 
 public class Employee {
-    private int id;
+    private Integer id;
     private String name;
     private float salary;
     private String email;
     private Department dept;
 
-    public int getId() {
+    public Employee(float salary, String email, Department dept) {
+        this.salary = salary;
+        this.email = email;
+        this.dept = dept;
+    }
+
+    public Employee() {
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

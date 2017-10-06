@@ -1,4 +1,4 @@
-package com.self.learning.entity;
+package com.self.learning.hql;
 
 import java.util.HashSet;
 import java.util.Set;
