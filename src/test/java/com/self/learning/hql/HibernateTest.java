@@ -1,5 +1,7 @@
 package com.self.learning.hql;
 
+import com.self.learning.dao.DepartmentDao;
+import com.self.learning.utils.HibernateUtils;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.*;
@@ -10,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 @SuppressWarnings({"Duplicates", "unchecked"})
@@ -192,6 +195,78 @@ public class HibernateTest {
         session.createQuery(hql)
                 .setInteger("id", 8000)
                 .executeUpdate();
+    }
+
+    @Test
+    public void testClassSecondaryLevelCache() {
+        Employee employee = (Employee) session.get(Employee.class, 100);
+        System.out.println(employee.getName());
+
+        transaction.commit();
+        session.close();
+
+        session = sessionFactory.openSession();
+        transaction = session.beginTransaction();
+
+        Employee employee1 = (Employee) session.get(Employee.class, 100);
+        System.out.println(employee1.getName());
+    }
+
+    @Test
+    public void testCollectionsSecondaryLevelCache() {
+        Department department = (Department) session.get(Department.class, 80);
+        System.out.println(department.getName());
+        System.out.println(department.getEmps().size());
+
+        transaction.commit();
+        session.close();
+
+        session = sessionFactory.openSession();
+        transaction = session.beginTransaction();
+
+        Department department2 = (Department) session.get(Department.class, 80);
+        System.out.println(department2.getName());
+        System.out.println(department2.getEmps().size());
+    }
+
+    @Test
+    public void testQuerySecondaryCache() {
+        Query query = session.createQuery("from Employee");
+        query.setCacheable(true);
+        List emps = query.list();
+        System.out.println(emps);
+
+        emps = query.list();
+        System.out.println(emps);
+    }
+
+    @Test
+    public void testQueryIterate() {
+        Department dept = (Department) session.get(Department.class, 80);
+        System.out.println(dept.getName());
+        System.out.println(dept.getEmps().size());
+
+        //List list = session.createQuery("from Employee e where e.dept.id=80").list();
+        //System.out.println(list.size());
+        Iterator<Employee> iterate = session.createQuery("from Employee e where e.dept.id=80").iterate();
+        while (iterate.hasNext()) {
+            System.out.println(iterate.next().getName());
+        }
+    }
+
+    @Test
+    public void testManageSession() {
+        Session session = HibernateUtils.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        System.out.println("--->" + session.hashCode());
+        DepartmentDao dao = new DepartmentDao();
+        Department dept = new Department();
+        dept.setName("asiainfo");
+        dao.save(dept);
+        dao.save(dept);
+        dao.save(dept);
+        transaction.commit();
+        System.out.println(session.isOpen());
     }
 
     @After

@@ -4,6 +4,9 @@
 <!-- Generated 2017-10-4 15:35:54 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.self.learning.hql.Employee" table="T_EMPLOYEE">
+
+        <!--<cache usage="read-write"/>-->
+
         <id name="id" type="int">
             <column name="ID" />
             <generator class="native" />
